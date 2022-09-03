@@ -1,6 +1,17 @@
 import pytest
 import sys
 
+@pytest.mark.parametrize("username, password", 
+[
+    ('james', 'james001'),
+    ('john', 'john001'),
+    ('peter', 'peter001'),
+]
+)
+
+def test_details(username, password):
+    print(username, password)
+
 @pytest.mark.smoke
 def test_login():
     print("Login done") 
