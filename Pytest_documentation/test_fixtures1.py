@@ -25,3 +25,20 @@ def test_fruit_salad(fruit_bowl):
     fruit_salad = FruitSalad(*fruit_bowl)
 
     assert all(fruit.cubed for fruit in fruit_salad.fruit)
+
+
+# contents of test_append.py
+
+# Arrange
+@pytest.fixture
+def first_entry():
+    return "a"
+# Arrange
+@pytest.fixture
+def order(first_entry):
+    return [first_entry]
+def test_string(order):
+# Act
+    order.append("b")
+# Assert
+assert order == ["a", "b"]
